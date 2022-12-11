@@ -90,7 +90,7 @@ double[] ClmAverage(int[,] Array)
         {
             ClmSum = ClmSum + Array[j, i];
         }
-        double ClmAverage = Math.Round((double)ClmSum / Array.GetLength(0), 2, MidpointRounding.ToEven);
+        double ClmAverage = (double)ClmSum / Array.GetLength(0);
         AllClmAverages[i] = ClmAverage;
     }
 
@@ -103,7 +103,7 @@ void ArrayOutput(double[] Array)
 
     for (int i = 0; i < Array.Length; i++)
     {
-        Result = Result + Array[i] + "; ";
+        Result = Result + Math.Round(Array[i], 2, MidpointRounding.ToEven) + "; ";
     }
     Result = Result.TrimEnd(';', ' ') + ".";
     System.Console.WriteLine("");
